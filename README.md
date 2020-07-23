@@ -45,7 +45,7 @@ from keras.layers import Dense
       np_resource = np.dtype([("resource", np.ubyte, 1)])
 
 
-In this repo, our image data is stored a like so:
+In this repo, our image data is stored like so:
 
 ```
 data/training_set/cat
@@ -73,8 +73,8 @@ data_generator = ImageDataGenerator(rescale=1.0/256.0)
 
 Now that we've instantiated an `ImageDataGenerator` object, we can create generators for the training and testing data.
 
-Now we can create a basic CNN model.
+We then compile a basic CNN model.
 
-And then instead of using `model.fit`, we use `model.fit_generator` and instead of a train split, we use the generator for our training data.
+And then instead of using `model.fit`, we use `model.fit_generator` and instead of directly feeding the model the data, we use the generator in place of the training data.
 
 >This single epoch took about 15 minutes to run.
