@@ -18,7 +18,7 @@ from keras.models import Sequential
 from keras.layers import Dense 
 ```
 
-In this repo, our image data is stored a like so:
+In this repo, our image data is stored like so:
 
 ```
 data/training_set/cat
@@ -59,7 +59,7 @@ test_generator = data_generator.flow_from_directory('data/test_set/', class_mode
     Found 2000 images belonging to 2 classes.
 
 
-Now we can create a basic CNN model.
+We then compile a basic CNN model.
 
 
 ```python
@@ -79,7 +79,7 @@ model.compile(loss='binary_crossentropy',
               metrics=['accuracy'])
 ```
 
-And then instead of using `model.fit`, we use `model.fit_generator` and instead of a train split, we use the generator for our training data.
+And then instead of using `model.fit`, we use `model.fit_generator` and instead of directly feeding the model the data, we use the generator in place of the training data.
 
 >This single epoch took about 15 minutes to run.
 
